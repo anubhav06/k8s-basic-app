@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx-test-github-same-2
+  name: my-nginx-application
 spec:
   containers:
   - name: nginx
-    image: nginx:1.14.2
+    image: nginx:1.14.1
     ports:
     - containerPort: 80
