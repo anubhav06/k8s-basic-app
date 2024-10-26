@@ -11,5 +11,5 @@ spec:
       - name: kubescape
         image: quay.io/kubescape/kubescape-cli:v3.0.15
         command: ["kubescape"]
-        args: ["scan", "workload", "Pod/nginx-test-github-same-2", "--namespace", "app", "--scan-images", "--severity-threshold", "high", "--exclude-namespaces", "akuity,default,kube-node-lease,kube-public,kube-system"]
+        args: ["scan", "workload", "Pod/my-nginx-application", "--namespace", "app", "--scan-images", "--severity-threshold", "high", "--exclude-namespaces", "akuity,default,kube-node-lease,kube-public,kube-system"]
       restartPolicy: Never
