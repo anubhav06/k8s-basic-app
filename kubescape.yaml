@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: Kubescape-Scan
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+spec:
+  template:
+    spec:
+      containers:
+      - name: kubescape
+        image: quay.io/kubescape/kubescape-cli:v3.0.15
+        command: ["kubescape"]
+        args: ["scan", "benchmark", "cis-1.5", "k8s", "--exclude-namespaces", "kube-system,kube-public,kube-node-lease", "--exclude-names", "k8s-benchmarks-cis-1.5"]
+      restartPolicy: Never
