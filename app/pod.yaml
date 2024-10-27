@@ -9,8 +9,8 @@ spec:
     #image: nginx:1.14.1
     ports:
     - containerPort: 80
-    securityContext:
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
-      runAsGroup: 1000
-      runAsNonRoot: true
+    #securityContext:
+    #  allowPrivilegeEscalation: false
+    #  readOnlyRootFilesystem: true
+    #  runAsGroup: 1000
+    #  runAsNonRoot: true
