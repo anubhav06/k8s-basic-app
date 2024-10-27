@@ -5,7 +5,8 @@ metadata:
 spec:
   containers:
   - name: nginx
-    image: nginx:1.14.1
+    image: cgr.dev/chainguard/nginx:latest
+    #image: nginx:1.14.1
     ports:
     - containerPort: 80
     securityContext:
