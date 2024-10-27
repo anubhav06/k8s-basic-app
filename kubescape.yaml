@@ -11,5 +11,5 @@ spec:
       - name: kubescape
         image: quay.io/kubescape/kubescape-cli:v3.0.15
         command: ["kubescape"]
-        args: ["scan", "./app" ,"--scan-images", "--severity-threshold", "high", "--include-namespaces", "app"]
+        args: ["scan","--scan-images", "--severity-threshold", "75", "--include-namespaces", "app"]
       restartPolicy: Never
