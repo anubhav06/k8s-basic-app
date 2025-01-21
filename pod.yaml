@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-nginx-application-2
+  name: my-nginx-application
 spec:
   containers:
   - name: nginx
-    image: nginx:1.14.1
+    image: nginx:1.14.2
     ports:
     - containerPort: 80
     #securityContext:
