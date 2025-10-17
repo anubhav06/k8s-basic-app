@@ -1,0 +1,55 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: test-apps-appset
+  namespace: argocd
+spec:
+  generators:
+    - list:
+        elements:
+          - name: test-app-1
+            path: "."
+          - name: test-app-2
+            path: "."
+          - name: test-app-3
+            path: "."
+          - name: test-app-4
+            path: "."
+          - name: test-app-5
+            path: "."
+          - name: test-app-6
+            path: "."
+          - name: test-app-7
+            path: "."
+          - name: test-app-8
+            path: "."
+          - name: test-app-9
+            path: "."
+          - name: test-app-10
+            path: "."
+          - name: test-app-11
+            path: "."
+          - name: test-app-12
+            path: "."
+          - name: test-app-13
+            path: "."
+          - name: test-app-14
+            path: "."
+          - name: test-app-15
+            path: "."
+  template:
+    metadata:
+      # label so you can easily filter/delete the generated apps
+      labels:
+        test: pagination
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/anubhav06/k8s-basic-app          # <-- REPLACE this with your repo URL
+        path: "{{path}}"             # uses the path value from the generator (here all ".")
+        targetRevision: HEAD
+      destination:
+        server: "https://kubernetes.default.svc"
+        namespace: default
+      # keep syncPolicy empty so apps are just created (no automatic resource sync)
+      syncPolicy: {}
